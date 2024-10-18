@@ -1,0 +1,9 @@
+default_profile:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/databases/stage_3.db"
+      extensions:
+        - spatial
+      schema: dbt_stage_3

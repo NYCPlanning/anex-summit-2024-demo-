@@ -1,0 +1,6 @@
+version: 2
+models:
+  - name: stg__boroughs
+  - name: stg__garden_block_lot
+  - name: stg__garden_info
+  - name: stg__markets

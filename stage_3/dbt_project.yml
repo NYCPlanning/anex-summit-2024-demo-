@@ -1,0 +1,21 @@
+name: "duckdb_dbt"
+
+profile: "default_profile"
+
+model-paths: ["models"]
+
+models:
+  duckdb_dbt:
+    staging:
+      +materialized: table
+    intermediate:
+      +materialized: table
+    product:
+      +materialized: table
+
+data_tests:
+  +store_failures: true
+  schema: "_tests"
+
+flags:
+  fail-fast: true

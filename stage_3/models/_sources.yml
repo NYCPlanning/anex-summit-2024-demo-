@@ -1,0 +1,39 @@
+sources:
+  - name: external_source
+    meta:
+      external_location: "../data/source_data/{name}.csv"
+    tables:
+      - name: NYC_Farmers_Markets_20240819
+        columns:
+          - name: '"Market Name"'
+            data_tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+
+      - name: GreenThumb_Block-Lot_20240819
+        columns:
+          - name: parksid
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
+
+      - name: GreenThumb_Garden_Info_20240819
+        columns:
+          - name: parksid
+            data_tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+
+      - name: Borough_Boundaries
+        config:
+          external_location: "ST_Read('../data/source_data/Borough Boundaries.geojson')"
+        columns:
+          - name: geom
+            data_tests:
+              - not_null
+              - unique

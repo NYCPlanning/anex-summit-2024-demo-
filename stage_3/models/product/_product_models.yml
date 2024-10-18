@@ -1,0 +1,47 @@
+version: 2
+models:
+  - name: farm_to_market
+    description: The relationships between all NYC farmers markets and potential farms
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: market_name
+        data_type: string
+        data_tests: [not_null]
+      - name: farm_name
+        data_type: string
+        data_tests: [not_null]
+      - name: distance_ft
+        data_type: integer
+        data_tests: [not_null]
+      - name: line_geometry_wgs84
+        data_type: geometry
+        data_tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          name: farm_to_market_compound_key
+          combination_of_columns:
+            - market_name
+            - farm_name
+            - distance_ft
+
+  - name: markets
+    description: All farmers markets in NYC
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: market_name
+        data_type: string
+        data_tests: [not_null]
+
+  - name: farms
+    description: All potential farms in NYC
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: farm_name
+        data_type: string
+        data_tests: [not_null]

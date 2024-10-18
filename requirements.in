@@ -1,0 +1,11 @@
+black
+dbt-core
+dbt-duckdb
+duckdb
+duckdb-engine
+ipykernel
+lonboard
+mypy
+pandas
+pygwalker
+seaborn

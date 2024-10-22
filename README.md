@@ -1,6 +1,6 @@
 # Analytics Exchange Learning Summit 2024
 
-This repo is a demonstration of how New York City employees can use [DuckDB](https://duckdb.org/) and [dbt](https://docs.getdbt.com/) to build and analyze data.
+This is a demonstration of how New York City employees can use [DuckDB](https://duckdb.org/) and [dbt](https://docs.getdbt.com/) to build and analyze data.
 
 The code is organized into stages to show a progression from simple queries to a robust data pipeline.
 

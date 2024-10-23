@@ -3,7 +3,7 @@ default_profile:
   outputs:
     dev:
       type: duckdb
-      path: "../data/databases/stage_3.db"
+      path: "../data/stage_3.db"
       extensions:
         - spatial
       schema: dbt_stage_3

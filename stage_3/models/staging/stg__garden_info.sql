@@ -1,5 +1,5 @@
 WITH garden_info AS (
-  SELECT * FROM {{ source("external_source", "GreenThumb_Garden_Info_20240819") }}
+  SELECT * FROM {{ source("external_source", "GreenThumb_Garden_Info") }}
 )
 
 SELECT DISTINCT

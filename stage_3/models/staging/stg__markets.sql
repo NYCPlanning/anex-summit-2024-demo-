@@ -1,5 +1,5 @@
 with markets as (
-  SELECT * FROM {{ source("external_source", "NYC_Farmers_Markets_20240819") }}
+  SELECT * FROM {{ source("external_source", "NYC_Farmers_Markets") }}
 )
 
 SELECT DISTINCT

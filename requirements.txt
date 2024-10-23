@@ -102,7 +102,7 @@ duckdb==1.1.2
     #   dbt-duckdb
     #   duckdb-engine
     #   pygwalker
-duckdb-engine==0.13.2
+duckdb-engine==0.13.4
     # via -r requirements.in
 executing==2.1.0
     # via stack-data
@@ -169,7 +169,7 @@ logbook==1.5.3
     # via dbt-core
 lonboard==0.10.3
     # via -r requirements.in
-markupsafe==3.0.1
+markupsafe==3.0.2
     # via jinja2
 mashumaro[msgpack]==3.13.1
     # via
@@ -190,7 +190,7 @@ more-itertools==10.5.0
     # via dbt-semantic-interfaces
 msgpack==1.1.0
     # via mashumaro
-mypy==1.12.0
+mypy==1.13.0
     # via -r requirements.in
 mypy-extensions==1.0.0
     # via
@@ -198,7 +198,7 @@ mypy-extensions==1.0.0
     #   mypy
 nest-asyncio==1.6.0
     # via ipykernel
-networkx==3.4.1
+networkx==3.4.2
     # via dbt-core
 numpy==1.26.4
     # via
@@ -335,7 +335,7 @@ sqlalchemy==2.0.36
     # via
     #   duckdb-engine
     #   pygwalker
-sqlglot==25.25.1
+sqlglot==25.27.0
     # via pygwalker
 sqlparse==0.5.1
     # via dbt-core

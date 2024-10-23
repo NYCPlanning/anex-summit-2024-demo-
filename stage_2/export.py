@@ -13,7 +13,7 @@ TABLES_TO_EXPORT: list[str] = [
 
 
 def _export_table(table_name: str, database: Path = DATABASE_PATH) -> None:
-    print(f"Exporting table {table_name} ...")
+    print(f"Exporting table '{table_name}' as csv, parquet, and shapefile to {OUTPUT_DATA_DIRECTORY} ...")
     OUTPUT_DATA_DIRECTORY.mkdir(parents=True, exist_ok=True)
 
     with duckdb.connect(str(database)) as connection:

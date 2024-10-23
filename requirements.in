@@ -4,7 +4,7 @@ dbt-duckdb
 duckdb
 duckdb-engine
 ipykernel
-lonboard
+lonboard==0.9.3
 mypy
 pandas
 pygwalker

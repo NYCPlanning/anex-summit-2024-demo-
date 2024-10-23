@@ -57,7 +57,7 @@ Source data:
 
 Required
 
-- [Python 3.12](https://www.python.org/downloads/release/python-3120/) for running python code
+- [Python 3.12](https://www.python.org/downloads/release/python-3120/) for running python code (any version >=3.9 works)
 - [git](https://git-scm.com/downloads) for cloning this repo and installing `bash` terminal
 
 Optional
@@ -123,7 +123,6 @@ Optional
 4. Install packages
 
     ```bash
-    python -m pip install --upgrade pip
     python -m pip install --requirement requirements.txt
     pip list
     ```

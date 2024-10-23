@@ -178,16 +178,14 @@ Use a data pipeline to build Farm to Market
    python -m stage_2.load
    ```
 
-4. (Optional) Use the Jupyter notebook `stage_2/explore.ipynb` to explore the source data
-
-5. Run python scripts to transform and export data:
+4. Run python scripts to transform and export data:
 
    ```bash
    python -m stage_2.transform
    python -m stage_2.export
    ```
 
-6. Use the Jupyter notebook `stage_2/analyze.ipynb` to review and analyze the dataset
+5. Use the Jupyter notebook `stage_2/analyze.ipynb` to review and analyze the dataset
 
 ## Stage 3: dbt pipeline
 

@@ -22,15 +22,15 @@ source_datasets = [
     ),
     SourceDataset(
         table_name="farmers_markets",
-        file_path=SOURCE_DATA_DIRECTORY / "NYC_Farmers_Markets_20240819.csv",
+        file_path=SOURCE_DATA_DIRECTORY / "NYC_Farmers_Markets.csv",
     ),
     SourceDataset(
         table_name="garden_info",
-        file_path=SOURCE_DATA_DIRECTORY / "GreenThumb_Garden_Info_20240819.csv",
+        file_path=SOURCE_DATA_DIRECTORY / "GreenThumb_Garden_Info.csv",
     ),
     SourceDataset(
         table_name="garden_block_lot",
-        file_path=SOURCE_DATA_DIRECTORY / "GreenThumb_Block-Lot_20240819.csv",
+        file_path=SOURCE_DATA_DIRECTORY / "GreenThumb_Block-Lot.csv",
     ),
 ]
 
@@ -68,6 +68,9 @@ def load_source_data():
                     f"CREATE TABLE {dateset.table_name} as SELECT * FROM '{dateset.file_path}'"
                 )
         print(f"✅ Loaded source dataset {dateset.table_name}")
+    
+    with _db_connection() as connection:
+        connection.sql(f"SHOW ALL TABLES").show()
     print(f"✅ Loaded all source data to database {DATABASE_PATH}")
 
 

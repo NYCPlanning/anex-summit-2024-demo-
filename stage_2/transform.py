@@ -19,12 +19,15 @@ def _run_sql_file(filepath: Path, database: Path = DATABASE_PATH) -> None:
             result.show()
 
 
-def run_some_files() -> None:
+def run_transform_scripts() -> None:
     _run_sql_file(SQL_DIRECTORY / "build_boroughs.sql")
     _run_sql_file(SQL_DIRECTORY / "build_markets.sql")
     _run_sql_file(SQL_DIRECTORY / "build_farms.sql")
     _run_sql_file(SQL_DIRECTORY / "build_farm_to_market.sql")
 
+    with duckdb.connect(str(DATABASE_PATH)) as connection:
+        connection.sql(f"SHOW ALL TABLES").show()
+
 
 if __name__ == "__main__":
-    run_some_files()
+    run_transform_scripts()

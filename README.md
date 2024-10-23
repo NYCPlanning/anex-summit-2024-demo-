@@ -148,6 +148,9 @@ These datasets were chosen to show some of the ways source data can be imported 
 
 1. Download PLUTO from NYC Open Data [here](https://data.cityofnewyork.us/d/64uk-42ks/) by navigating to `Export` -> `Download file` -> `Export format: CSV`
 
+> [!TIP]
+> If the Open Data download takes too long, try downloading from DCP's site Bytes of the Big Apple ([link](https://www.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)).
+
 2. Rename the downloaded csv file to `pluto.csv` and move it to `data/source_data/`
 
 3. Run a python script to download the other two sources and load all three sources into a database:

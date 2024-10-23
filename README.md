@@ -79,7 +79,7 @@ Optional
     cd anex-summit-2024-demo
     ```
 
-2. Create python virtual environment named `.venv` either using the command below or using the VS Code command `Python: create environment`
+2. Create a python virtual environment named `.venv` either using the command below or using the VS Code command `Python: create environment`
 
     ```bash
     which python
@@ -91,23 +91,29 @@ Optional
 
     <details open>
     <summary>Windows bash</summary>
+
     ```bash
     source .venv/Scripts/activate
     ```
+
     </details>
 
     <details>
     <summary>Windows PowerShell</summary>
+
     ```shell
     venv\Scripts\Activate.ps1
     ```
+
     </details>
 
     <details>
     <summary>POSIX bash/zsh</summary>
+
     ```shell
     source .venv/bin/activate
     ```
+
     </details>
 
 4. Install packages

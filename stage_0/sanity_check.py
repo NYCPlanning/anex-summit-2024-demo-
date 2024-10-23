@@ -16,16 +16,6 @@ def duckdb_environment():
     duckdb.sql("PRAGMA platform").show()
 
 
-def inspect_remote_table():
-    duckdb.sql(f"SET http_proxy TO '{HTTP_PROXY}'")
-    duckdb.sql(
-        "DESCRIBE TABLE 'https://blobs.duckdb.org/data/Star_Trek-Season_1.csv'"
-    ).show()
-    duckdb.sql(
-        "SUMMARIZE TABLE 'https://blobs.duckdb.org/data/Star_Trek-Season_1.csv'"
-    ).show()
-
-
 def create_simple_database():
     # delete the database if it exists
     DATABASE_PATH.unlink(missing_ok=True)
@@ -48,8 +38,18 @@ def create_simple_database():
     print(results)
 
 
+def inspect_remote_table():
+    duckdb.sql(f"SET http_proxy TO '{HTTP_PROXY}'")
+    duckdb.sql(
+        "DESCRIBE TABLE 'https://blobs.duckdb.org/data/Star_Trek-Season_1.csv'"
+    ).show()
+    duckdb.sql(
+        "SUMMARIZE TABLE 'https://blobs.duckdb.org/data/Star_Trek-Season_1.csv'"
+    ).show()
+
+
 if __name__ == "__main__":
     duckdb_environment()
-    inspect_remote_table()
     create_simple_database()
+    inspect_remote_table()
     print("✅ Sanity check successful!")

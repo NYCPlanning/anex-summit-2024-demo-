@@ -28,11 +28,12 @@ def create_database():
 
 def load_pluto():
     pluto_csv_path = SOURCE_DATA_DIRECTORY / "pluto.csv"
+
     print("Creating PLUTO table from local csv ...")
     with duckdb.connect(str(DATABASE_PATH)) as connection:
         connection.sql(f"DESCRIBE TABLE '{pluto_csv_path}'").show()
         connection.sql(f"CREATE TABLE pluto as SELECT * FROM '{pluto_csv_path}'")
-        connection.sql("SHOW ALL TABLES").show()
+        connection.sql(f"SELECT count(*) FROM pluto").show()
 
     print("✅ Loaded PLUTO data")
 
@@ -40,6 +41,7 @@ def load_pluto():
 def load_airbnb():
     airbnb_nyc_listings_url = "https://data.insideairbnb.com/united-states/ny/new-york-city/2024-07-05/visualisations/listings.csv"
     airbnb_nyc_detailed_listings_url = "https://data.insideairbnb.com/united-states/ny/new-york-city/2024-07-05/data/listings.csv.gz"
+
     print("Creating Airbnb NYC listings table from remote csv file ...")
     with duckdb.connect(str(DATABASE_PATH)) as connection:
         connection.sql(f"SET http_proxy TO '{HTTP_PROXY}'")
@@ -47,6 +49,8 @@ def load_airbnb():
         connection.sql(
             f"CREATE TABLE airbnb_nyc_listings as SELECT * FROM '{airbnb_nyc_listings_url}'"
         )
+        connection.sql(f"SELECT count(*) FROM airbnb_nyc_listings").show()
+
     print(
         "Creating Airbnb NYC detailed listings table from remote compressed csv file ..."
     )
@@ -56,7 +60,7 @@ def load_airbnb():
         connection.sql(
             f"CREATE TABLE airbnb_nyc_detailed_listings as SELECT * FROM '{airbnb_nyc_detailed_listings_url}'"
         )
-        connection.sql("SHOW ALL TABLES").show()
+        connection.sql(f"SELECT count(*) FROM airbnb_nyc_detailed_listings").show()
 
     print("✅ Loaded Airbnb data")
 
@@ -78,15 +82,28 @@ def load_taxi():
         for_hire_trips_url,
         high_volume_for_hire_trips_url,
     ]
-    print("Creating Taxi tables from remote parquet files ...")
+    print("Creating a TLC trips table from remote parquet files ...")
     with duckdb.connect(str(DATABASE_PATH)) as connection:
         connection.sql(f"SET http_proxy TO '{HTTP_PROXY}'")
+
         for remote_table in tlc_trip_urls:
+            print(f"Describing {remote_table} ...")
             connection.sql(f"DESCRIBE TABLE '{remote_table}'").show()
+
+        print(f"Creating table 'tlc_trips' from all files ...")
         connection.sql(
             f"CREATE TABLE tlc_trips as SELECT * FROM read_parquet({tlc_trip_urls}, union_by_name = true, filename = true)"
         )
         connection.sql("SHOW ALL TABLES").show()
+
+        print(f"Describing table 'tlc_trips' ...")
+        connection.sql(f"DESCRIBE TABLE tlc_trips").show()
+
+        tlc_trips_length = connection.sql(
+            "select count(*) as row_count from tlc_trips"
+        ).df()["row_count"][0]
+        print(f"The table 'tlc_trips' has {tlc_trips_length:,} rows")
+
     print("✅ Loaded Taxi data")
 
 

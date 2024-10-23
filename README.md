@@ -6,6 +6,37 @@ The code is organized into stages to show a progression from simple queries to a
 
 A fictional dataset about about local agriculture called `Farm to Market` was created for the purposes of this repo.
 
+## Farm to Market
+
+### Dataset description
+
+Farm to Market captures where local food is sold and might be grown in New York City.
+
+This dataset combines the locations of farmers markets and potential farms (community gardens) to highlight availability and potential local suppliers of healthy produce in NYC.
+
+### Final tables
+
+`markets`
+
+Each row is a farmers market
+
+`farms`
+
+Each row is a potential farm
+
+`farm_to_market` table
+
+Each row is a market and farm pair
+
+### Source data
+
+Source data:
+
+- NYC Borough Boundaries [[source](https://data.cityofnewyork.us/City-Government/Borough-Boundaries/tqmj-j8zm)]
+- NYC Farmers Markets [[source](https://data.cityofnewyork.us/Health/NYC-Farmers-Markets/8vwk-6iz2/about_data)]
+- GreenThumb Garden Info [[source](https://data.cityofnewyork.us/dataset/GreenThumb-Garden-Info/p78i-pat6/about_data)]
+- GreenThumb Block-Lot [[source](https://data.cityofnewyork.us/dataset/GreenThumb-Block-Lot/fsjc-9fyh/about_data)]
+
 ## Setup
 
 ### Prerequisites
@@ -118,7 +149,7 @@ These datasets were chosen to show some of the ways source data can be imported 
 
 ## Stage 2: Pipeline
 
-Use a data pipeline to build Farm To Market
+Use a data pipeline to build Farm to Market
 
 1. Download all source data from their Open Data pages by navigating to `Export` -> `Download file`. Depending on the dataset, either download a CSV or a GeoJSON file.
 
@@ -143,7 +174,7 @@ Use a data pipeline to build Farm To Market
 
 ## Stage 3: dbt pipeline
 
-Use dbt to build Farm To Market
+Use dbt to build Farm to Market
 
 1. Install dbt packages and confirm setup:
 

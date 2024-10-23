@@ -167,7 +167,7 @@ Use a data pipeline to build Farm to Market
 
 1. Download all source data from their Open Data pages by navigating to `Export` -> `Download file`. Depending on the dataset, either download a CSV or a GeoJSON file.
 
-2. Move the downloaded csv file to `data/source_data/`
+2. Rename the downloaded files to remove the dates and move them to `data/source_data/`
 
 3. Run a python script to load all source data into a database:
 
@@ -190,26 +190,28 @@ Use a data pipeline to build Farm to Market
 
 Use dbt to build Farm to Market
 
-1. Navigate to `stage_3` directory:
+1. Download and rename source data as descibed in Stage 2
+
+2. Navigate to `stage_3` directory:
 
    ```bash
    cd stage_3
    ```
 
-2. Install dbt packages and confirm setup:
+3. Install dbt packages and confirm setup:
 
    ```bash
    dbt deps
    dbt debug
    ```
 
-3. Test source data:
+4. Test source data:
 
    ```bash
    dbt test --select "source:*"
    ```
 
-4. Build the dataset:
+5. Build the dataset:
 
    ```bash
    dbt build

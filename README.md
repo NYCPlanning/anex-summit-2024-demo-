@@ -190,7 +190,7 @@ Use a data pipeline to build Farm to Market
 
 Use dbt to build Farm to Market
 
-1. Download and rename source data as descibed in Stage 2
+1. Download and rename source data as described in Stage 2
 
 2. Navigate to the `stage_3` folder:
 

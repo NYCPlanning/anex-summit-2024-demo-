@@ -104,7 +104,7 @@ These datasets were chosen to show some of the ways source data can be imported 
 
 ### Steps
 
-1. Download PLUTO from NYC Open Data [here](https://data.cityofnewyork.us/d/64uk-42ks/) by navigating to `Actions` -> `API` -> `Download file` -> `Export format: CSV`
+1. Download PLUTO from NYC Open Data [here](https://data.cityofnewyork.us/d/64uk-42ks/) by navigating to `Export` -> `Download file` -> `Export format: CSV`
 
 2. Rename the downloaded csv file to `pluto.csv` and move it to `data/source_data/`
 
@@ -120,10 +120,7 @@ These datasets were chosen to show some of the ways source data can be imported 
 
 Use a data pipeline to build Farm To Market
 
-1. Download all source data from their Open Data pages by navigating to `Actions` -> `API` -> `Download file` -> `Export format: CSV`
-
-   > [!TIP]
-   > NYC Borough Boundaries must be downloaded as a geojson file by navigating to `Export` -> `Download Geospatial Data` -> `GeoJSON`.
+1. Download all source data from their Open Data pages by navigating to `Export` -> `Download file`. Depending on the dataset, either download a CSV or a GeoJSON file.
 
 2. Move the downloaded csv file to `data/source_data/`
 

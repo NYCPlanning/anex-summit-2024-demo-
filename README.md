@@ -2,9 +2,14 @@
 
 This is a demonstration of how New York City employees can use [DuckDB](https://duckdb.org/) and [dbt](https://docs.getdbt.com/) to build and analyze data.
 
+A fictional dataset about about local agriculture called `Farm to Market` was created for the purposes of this repo.
+
 The code is organized into stages to show a progression from simple queries to a robust data pipeline.
 
-A fictional dataset about about local agriculture called `Farm to Market` was created for the purposes of this repo.
+- Stage 0: confirm everything is setup correctly
+- Stage 1: load and explore data
+- Stage 2: use a data pipeline to build Farm to Market
+- Stage 3: use dbt to build Farm to Market
 
 ## Farm to Market
 

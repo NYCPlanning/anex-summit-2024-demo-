@@ -1,10 +1,14 @@
 import os
 from pathlib import Path
 import duckdb
+import platform
 
 DATA_DIRECTORY = Path(__file__).parent.parent / "data"
 DATABASE_PATH = DATA_DIRECTORY / "sanity_check.db"
-HTTP_PROXY = os.environ["http_proxy"]
+if platform.system() == "Windows":
+    HTTP_PROXY = os.environ["http_proxy"]
+else:
+    HTTP_PROXY = ""
 
 
 def duckdb_environment():

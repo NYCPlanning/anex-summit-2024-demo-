@@ -42,6 +42,10 @@ Source data:
 - GreenThumb Garden Info [[source](https://data.cityofnewyork.us/dataset/GreenThumb-Garden-Info/p78i-pat6/about_data)]
 - GreenThumb Block-Lot [[source](https://data.cityofnewyork.us/dataset/GreenThumb-Block-Lot/fsjc-9fyh/about_data)]
 
+### Graph of dbt data pipleline
+
+![Graph of dbt data pipleline](stage_3/docs/dbt-dag.png)
+
 ## Setup
 
 ### Prerequisites
@@ -215,4 +219,11 @@ Use dbt to build Farm to Market
 
    ```bash
    dbt build
+   ```
+
+6. Generate and view data documentation:
+
+   ```bash
+   dbt docs generate
+   dbt docs serve
    ```

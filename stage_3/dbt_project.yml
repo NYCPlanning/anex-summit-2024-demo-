@@ -1,11 +1,11 @@
-name: "duckdb_dbt"
+name: "farm_to_market"
 
 profile: "default_profile"
 
 model-paths: ["models"]
 
 models:
-  duckdb_dbt:
+  farm_to_market:
     staging:
       +materialized: table
     intermediate:

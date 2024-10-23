@@ -209,6 +209,7 @@ numpy==1.26.4
     #   pyarrow
     #   pygwalker
     #   seaborn
+    #   shapely
 ordered-set==4.1.0
     # via deepdiff
 packaging==24.1
@@ -325,6 +326,8 @@ seaborn==0.13.2
     # via -r requirements.in
 segment-analytics-python==2.2.3
     # via pygwalker
+shapely==2.0.6
+    # via -r requirements.in
 six==1.16.0
     # via
     #   asttokens

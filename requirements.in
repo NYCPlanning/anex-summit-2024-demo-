@@ -9,3 +9,4 @@ mypy
 pandas
 pygwalker
 seaborn
+shapely

@@ -2,7 +2,7 @@ from pathlib import Path
 import duckdb
 
 DATA_DIRECTORY = Path(__file__).parent.parent / "data"
-DATABASE_PATH = DATA_DIRECTORY / "databases" / "stage_2.db"
+DATABASE_PATH = DATA_DIRECTORY / "stage_2.db"
 OUTPUT_DATA_DIRECTORY = DATA_DIRECTORY / "output" / "stage_2"
 
 TABLES_TO_EXPORT: list[str] = [

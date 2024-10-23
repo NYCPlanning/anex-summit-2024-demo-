@@ -187,20 +187,26 @@ Use a data pipeline to build Farm to Market
 
 Use dbt to build Farm to Market
 
-1. Install dbt packages and confirm setup:
+1. Navigate to `stage_3` directory:
+
+   ```bash
+   cd stage_3
+   ```
+
+2. Install dbt packages and confirm setup:
 
    ```bash
    dbt deps
    dbt debug
    ```
 
-2. Test source data:
+3. Test source data:
 
    ```bash
    dbt test --select "source:*"
    ```
 
-3. Build the dataset:
+4. Build the dataset:
 
    ```bash
    dbt build

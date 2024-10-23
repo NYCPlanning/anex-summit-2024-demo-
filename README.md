@@ -29,7 +29,7 @@ Each row is a farmers market
 
 Each row is a potential farm
 
-`farm_to_market` table
+`farm_to_market`
 
 Each row is a market and farm pair
 

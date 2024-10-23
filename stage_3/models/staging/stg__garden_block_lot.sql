@@ -5,4 +5,4 @@ SELECT DISTINCT
   lotsize,
   areacovered,
 FROM
-  {{ source("external_source", "GreenThumb_Block-Lot_20240819") }}
+  {{ source("external_source", "GreenThumb_Block-Lot") }}

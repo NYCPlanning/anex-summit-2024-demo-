@@ -72,7 +72,7 @@ Optional
 >
 > 2. Add two environment variables named `http_proxy` and `https_proxy` with the same value of `http://bcpxy.nycnet:8080`
 
-1. Clone this repo
+1. Clone this repo and navigate to the new folder:
 
     ```bash
     git clone https://github.com/NYCPlanning/anex-summit-2024-demo.git
@@ -192,7 +192,7 @@ Use dbt to build Farm to Market
 
 1. Download and rename source data as descibed in Stage 2
 
-2. Navigate to `stage_3` directory:
+2. Navigate to the `stage_3` folder:
 
    ```bash
    cd stage_3

@@ -15,8 +15,6 @@ anywidget==0.9.13
     # via lonboard
 appdirs==1.4.4
     # via pygwalker
-appnope==0.1.4
-    # via ipykernel
 arrow==1.3.0
     # via pygwalker
 astor==0.8.1
@@ -355,7 +353,7 @@ stack-data==0.6.3
     # via ipython
 text-unidecode==1.3
     # via python-slugify
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   ipykernel
     #   jupyter-client
